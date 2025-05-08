@@ -82,5 +82,34 @@ function processValue(value: string | number):number {
 }
 console.log(processValue(5));
 
+
+//
+
+interface Product {
+    name:string
+    price: number
+
+    }
+
+    
+    function getMostExpensiveProduct(products: Product[]):Product | null {
+        if(products.length === 0 ){
+            return null;
+        }
+
+        return products.reduce((max, curr)=> 
+            curr.price > max.price ? curr : max)
+
+       
+    }
+    const Product =[
+        { name: "Pen", price: 10 },
+        { name: "Notebook", price: 25 },
+        { name: "Bag", price: 50 }
+    ]
+
+    console.log(getMostExpensiveProduct(Product));
+    
+
     
 }
