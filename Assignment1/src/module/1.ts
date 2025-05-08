@@ -131,5 +131,25 @@ function getDayType(day: Day):string{
 }
 console.log(getDayType(Day.Monday));
 
-    
+  
+
+//
+  
+
+async function squareAsync(n:number) : Promise<number> {
+    return new Promise ((resolve, reject) =>{
+        setTimeout(()=>{
+            if(n<0){
+                reject (new Error('Negative number not Allow'))
+            }else{
+                resolve (n*n)
+            }
+        },1000)
+    })
+}
+
+squareAsync(5).then(console.log)
+// squareAsync(-2).then(console.log)
+
+
 }
